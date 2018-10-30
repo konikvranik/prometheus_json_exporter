@@ -3,13 +3,13 @@
 
 import json
 import time
+from datetime import datetime, timedelta
+from systemd.journal import JournaldLogHandler
+import logging
+import pyjq
 import urllib2
 from prometheus_client import start_http_server
 from prometheus_client.core import GaugeMetricFamily, StateSetMetricFamily, REGISTRY
-import pyjq
-import logging
-from systemd.journal import JournaldLogHandler
-from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 journald_handler = JournaldLogHandler()
